@@ -1,0 +1,5 @@
+hello	xinchao
+name	ten
+date	ngay
+month	thang
+year	nam
