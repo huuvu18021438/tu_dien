@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class DictionaryCommandline {
 
     public static void showAllWords() {
@@ -19,8 +21,20 @@ public class DictionaryCommandline {
         DictionaryManagement.dictionaryLookup();
     }
 
+    public static void dictionarySearcher() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Nhap word: ");
+        String word_input = input.nextLine();
+        for (int i = 0; i < Dictionary.words.size(); i++) {
+            if (Dictionary.words.get(i).word_target.startsWith(word_input)) {
+                System.out.print(Dictionary.words.get(i).word_target + ", ");
+            }
+        }
+    }
+
     public static void main(String[] args) {
         dictionaryAdvance();
         DictionaryManagement.dictionaryExportToFile();
+        dictionarySearcher();
     }
 }
